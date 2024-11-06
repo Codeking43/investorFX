@@ -53,23 +53,38 @@ onAuthStateChanged(auth, async (user) => {
         window.location.href = "index.html";
     }
 });
-
 // Submit a new order
 function submitOrder(e) {
     e.preventDefault();
+    
+    // Get the order amount and username from input fields
     const amount = parseFloat(document.getElementById('investedAmount').value);
+    const username = document.getElementById('username').innerText || auth.currentUser.displayName || "Unknown User";
+    
+    // Reference to the 'orders' section in the database
     const ordersRef = ref(database, 'orders');
     const newOrderRef = push(ordersRef);
 
+    // Validate that the amount is a number and greater than 0
+    if (!amount || isNaN(amount) || amount <= 0) {
+        document.getElementById('statusMessage').innerText = 'Please enter a valid amount.';
+        return;
+    }
+
+    // Submit order data to Firebase
     set(newOrderRef, {
         userId: auth.currentUser.uid,
-        username: document.getElementById('username').innerText,
+        username: username,
         amount: amount,
         paymentStatus: 'Pending',
         verifiedDate: null
     }).then(() => {
         document.getElementById('statusMessage').innerText = 'Payment submitted. Awaiting verification.';
-    }).catch((error) => console.error("Error submitting order:", error));
+        document.getElementById('investedAmount').value = ''; // Clear input after submission
+    }).catch((error) => {
+        console.error("Error submitting order:", error);
+        document.getElementById('statusMessage').innerText = 'Error submitting order. Please try again later.';
+    });
 }
 
 // Function to listen for orders specific to the logged-in user
