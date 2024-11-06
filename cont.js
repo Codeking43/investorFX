@@ -45,6 +45,7 @@ onAuthStateChanged(auth, async (user) => {
                 document.getElementById('username').innerText = userData.username;
                 document.getElementById('userEmail').innerText = userData.email;
                 document.getElementById('firstname').innerText = userData.firstname;
+                document.getElementById('statusMessage').innerText = userData.verified ? "Account Verified" : "Account Not Verified";
                 listenForUserOrders(user.uid);
             } else {
                 document.getElementById('statusMessage').innerText = "No user data found!";
@@ -126,7 +127,7 @@ function startCountdown(verifiedDate) {
             document.getElementById('countdown').innerText = `Time left: ${hours}h ${minutes}m ${seconds}s`;
         }
     }, 1000);
-    window.getElementById("payBTN").style.display='block';
+    document.getElementById("payBTN").style.display = 'block';
 }
 
 // Logout function
