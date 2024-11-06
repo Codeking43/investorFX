@@ -44,10 +44,7 @@ onAuthStateChanged(auth, async (user) => {
                 const userData = snapshot.val();
                 document.getElementById('username').innerText = userData.username;
                 document.getElementById('userEmail').innerText = userData.email;
-                document.getElementById('firstname').innerText = userData.firstname;
-                document.getElementById('statusMessage').innerText = userData.verified ? "Account Verified" : "Account Not Verified";
-                loadUserOrders(user.uid); // Load all past orders
-                listenForUserOrders(user.uid); // Listen for any new orders or updates
+                listenForUserOrders(user.uid);
             } else {
                 document.getElementById('statusMessage').innerText = "No user data found!";
             }
@@ -56,30 +53,6 @@ onAuthStateChanged(auth, async (user) => {
         window.location.href = "index.html";
     }
 });
-
-// Load all previous orders of the user from the database
-async function loadUserOrders(userId) {
-    const ordersRef = ref(database, 'orders');
-    const snapshot = await get(ordersRef);
-    
-    let hasOrders = false;
-
-    if (snapshot.exists()) {
-        const orders = snapshot.val();
-        Object.values(orders).forEach(orderData => {
-            if (orderData.userId === userId) {
-                hasOrders = true;
-                updateOrderList(orderData);
-            }
-        });
-    }
-    
-    // Show a message if the user has no previous orders
-    if (!hasOrders) {
-        const orderListElement = document.getElementById('orderList');
-        orderListElement.innerText = "You have not made any orders yet.";
-    }
-}
 
 // Submit a new order
 function submitOrder(e) {
@@ -99,7 +72,7 @@ function submitOrder(e) {
     }).catch((error) => console.error("Error submitting order:", error));
 }
 
-// Listen for any new orders or updates specific to the logged-in user
+// Function to listen for orders specific to the logged-in user
 function listenForUserOrders(userId) {
     const ordersRef = ref(database, 'orders');
 
@@ -152,7 +125,6 @@ function startCountdown(verifiedDate) {
             document.getElementById('countdown').innerText = `Time left: ${hours}h ${minutes}m ${seconds}s`;
         }
     }, 1000);
-    document.getElementById("payBTN").style.display = 'block';
 }
 
 // Logout function
