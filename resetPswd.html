@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28A745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007BFF;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Reset Password</h2>
+        <div id="error" style="color:red; display:none; text-align: center;"></div>
+        <div id="success" style="color:green; display:none; text-align: center;"></div>
+        <form id="reset-password-form">
+            <div class="form-group">
+                <label for="reset-email">Email</label>
+                <input type="email" id="reset-email" placeholder="Enter your email" required>
+            </div>
+            <button class="submit-btn" type="button" onclick="sendPasswordReset()">Send Reset Link</button>
+            <div class="toggle-link" onclick="window.location.href='index.html'">Back to Login</div>
+        </form>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAicjO4bsXnfdF4l6sCmFvoRliiV6EC62I",
+            authDomain: "portfolioclient-7d2fa.firebaseapp.com",
+            databaseURL: "https://portfolioclient-7d2fa-default-rtdb.firebaseio.com",
+            projectId: "portfolioclient-7d2fa",
+            storageBucket: "portfolioclient-7d2fa.appspot.com",
+            messagingSenderId: "141801602453",
+            appId: "1:141801602453:web:91d3d6231987678dc78a9c"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Send password reset email
+        function sendPasswordReset() {
+            const email = document.getElementById('reset-email').value;
+            const errorDiv = document.getElementById('error');
+            const successDiv = document.getElementById('success');
+
+            // Clear previous messages
+            errorDiv.style.display = 'none';
+            successDiv.style.display = 'none';
+
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    successDiv.innerText = 'Password reset link sent! Check your email.';
+                    successDiv.style.display = 'block';
+                })
+                .catch((error) => {
+                    errorDiv.innerText = 'Error: ' + error.message;
+                    errorDiv.style.display = 'block';
+                });
+        }
+    </script>
+</body>
+</html>

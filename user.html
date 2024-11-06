@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOME</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./4/w3.css">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body, h1, h2, h3, h4, h5 {
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .w3-half img {
+            margin-bottom: -6px;
+            margin-top: 16px;
+            opacity: 0.8;
+            cursor: pointer;
+        }   
+        .w3-half img:hover { 
+            opacity: 1;
+        }
+        li {
+            gap: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-gray w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topright" style="width:100%;color:white; font-size:22px">close &times;</a>
+    <div class="w3-container">
+        <div class="w3-card-4">
+            <img src="./avatar1.png" alt="Avatar" width="100%">
+            <div class="w3-container w3-center w3-white">
+                <span id="firstname"></span>
+                <br>
+                <button class="w3-btn w3-black" onclick="logout()">Logout</button>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- shareable Link -->
+    <div class="w3-bar-block">
+     
+<button class="w3-btn w3-black">Share Link</button>
+<div id="statusMessage"></div>
+<div id="countdown"></div>
+<ul id="orderList" class="w3-ul"></ul>
+
+  </div>
+    </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding" style="border-bottom: 2px solid gray;">
+    <a href="javascript:void(0)" class="w3-button w3-text-red w3-margin-right" onclick="w3_open()">&#9776;</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+
+
+
+
+
+<!-- PAGE CONTENT -->
+<div class="w3-main" style="margin-left:340px;margin-right:10px;">
+   
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+        <p class="w3-text-green w3-center w3-xlarge" style="font-family: cursive;">1-Day payout scheme/<span id="showEL" class="w3-text-red">EveryDay is A Win!</span></p>
+        <marquee behavior="" direction="" class="w3-text-light-green w3-xlarge ">Invest today and Earn tommorrow </marquee>
+        <h3 class="w3-xlarge w3-center"><b class="w3-text-green" >Hi,<span class="w3-text-teal" id="username"></span></b></h3>
+      
+    </div>
+  <div class="w3-container">
+    
+    <p class="w3-right w3-tag w3-yellow w3-xxlarge">&#8358;<span id="investAmount">0</span>  Invested</p>
+    
+  </div>
+  <button class="w3-left w3-btn w3-tag"  onclick="document.getElementById('id01').style.display='block'"  style="font-family: 'Times New Roman', Times, serif;">INVEST NOW</button>
+
+  <!-- invested modal-->
+   
+    <!-- Monetization Section -->
+    <div class="w3-container" id="designers" style="margin-top:75px">
+      <h4 class="w3-large w3-text-light-green"><b>  <span id="userEmail"></span></b></h4>
+    
+      <hr style="width:50px;border:5px solid teal" class="w3-round">
+      <p class="w3-text-blue"><b>plan and Earning budget:</b></p>
+  </div>
+  <hr>
+
+  <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col m4 w3-margin-bottom">
+        <p class="w3-black w3-left w3-xlarge w3-tag">Starter</p>
+        <span class="w3-tag w3-right w3-red w3-wide w3-padding">&#8358;500 adder</span>
+          <div class="w3-gray">
+          
+              <div class="w3-container">
+        <ul class="w3-ul  w3-text-white w3-xlarge">
+            <li>&#8358;1500</li>
+            <li>&#8358;2500</li>
+            <li>&#8358;3500</li>
+        </ul>
+
+              </div>
+              <br>
+          </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <p class="w3-black w3-left w3-xlarge w3-tag">Standard</p>
+        <span class="w3-tag w3-right w3-red w3-wide w3-padding">&#8358;2000 adder</span>
+          <div class="w3-teal">       
+              <div class="w3-container">
+                <ul class="w3-ul w3-xlarge">
+                    <li>&#8358;5000</li>
+                    <li>&#8358;7000</li>
+                    <li>&#8358;8000</li>
+                </ul>
+              </div>
+              <br>
+          </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <p class="w3-black w3-left w3-xlarge w3-tag">Premium</p>
+        <span class="w3-tag w3-right w3-red w3-wide w3-padding">&#8358;10,000 adder</span>
+          <div class="w3-orange">
+              <div class="w3-container">
+                <ul class="w3-ul  w3-text-white  w3-xlarge">
+                    <li>&#8358;20,000</li>
+                    <li>&#8358;20,000</li>
+                    <li>&#8358;80,0 00</li>
+                </ul>
+              </div>
+              <br>
+          </div>
+      </div>
+       <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Invest and Relax- <span>Original</span></b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>1-Day payout scheme</p>
+  </div>     
+    <div class="w3-container">
+    <ul class="w3-ul w3-border w3-padding">
+        <p><h2 class=" w3-large "> Terms  and Condition <span class="w3-right w3-red w3-tiny w3-padding">Our Policy</span> </h2>   </p>
+        <li>Only members who has invested will be liable to get paid after 24hours of verification of invested fund</li>
+    </ul>
+ 
+    <br>
+    <div id="id01" class="w3-modal" style="margin-top: 40px;">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+          <header class="w3-container w3-white" style="border-bottom: 3px solid black;"> 
+
+            <span onclick="document.getElementById('id01').style.display='none'" 
+            class="w3-button w3-tag w3-display-topright w3-text-blue">&times;</span>
+           
+          </header>
+        
+          <div class="w3-container">    
+      <div class="w3-half w3-container">
+     <br>
+      <img src="" alt="payment Receipt " id="uploadedImage" style="width: 100%;" >
+      </div>
+      <div class="w3-half w3-container w3-teal">
+        <form id="orderForm">
+        <br> <br><br>
+        <label for="">Amount</label>
+        <input type="text" class="w3-input" name="" id="investedAmount" placeholder="Enter Amount" required>
+        <br><br>
+       
+        <select name="" id="plan" class="w3-input" required>
+            <option value="#Null">Selec Plan</option>
+            <option value="Starter">Starter</option>
+            <option value="Standard">Standard</option>
+            <option value="Premium">Premium</option>
+        </select>
+        <br><br> <label for="">Upload Receipt</label>
+        <input type="file" name="" id="imageUploader" accept="image/*" class="w3-input" required>
+        <br>
+        <div class="w3-card-4 w3-white">
+      <form method="post" class="w3-container">
+    <ul class="w3-ul">
+        <li>OPAY <span class="w3-tag w3-right">624353435</span></li>
+        <li>Mathias monfung</li>
+    </ul>
+   
+          <button class="w3-btn w3-padding w3-blue">Invest</button>
+          <br><br>
+    </div>
+          
+        </form>
+        <br>
+        <script>
+            const imgUploader = document.getElementById('imageUploader');
+            let uploadedImg = document.getElementById('uploadedImage');
+            imgUploader.addEventListener("change", (e) => {
+                const selectedImg = imgUploader.files[0];
+                const reader = new FileReader();
+                reader.addEventListener('load', (e) => {
+                    uploadedImg.src = e.target.result;
+                });
+                reader.readAsDataURL(selectedImg);
+             
+            });
+         
+        </script>
+          </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    
+          
+
+
+    
+        <script>
+          // Script to open and close sidebar
+          function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+          }
+           
+          function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+          }
+          
+          // Modal Image Gallery
+          function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+          }
+          </script>
+                    </div>
+                    <script type="module" src="./cont.js">
+                     
+                      </script>
+                      
+                      
+                    
+  </div></div></body></html>

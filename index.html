@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InVestorFX</title>
+    <link rel="stylesheet" href="./4/styles.css">
+    <link rel="stylesheet" href="./4/w3.css">
+</head>
+<body>
+    <div class="container w3-card-4">
+        <span class="w3-xlarge w3-center w3-orange" id="idFont">
+            <span class="w3-text-white w3-blue">InV</span>
+            <span class="w3-text-teal">estor</span>
+            <span class="w3-tag w3-red">FX</span>
+        </span>
+        <hr>
+        
+        <!-- Error Message Display -->
+        <div id="error" style="display: none; color: red; text-align: center;">
+            <span onclick="document.getElementById('error').style.display='none';" style="float:right; cursor:pointer;">x</span>
+            <span id="spanT" style="color: teal;"></span>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="active" method="post" autocomplete="on">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+            </div>
+            <button class="submit-btn" type="button" onclick="login()">Login</button>
+            <br><br>
+            <a href="./resetPswd.html" class="w3-text-green" style="text-decoration: none;">Forgotton password click <span class="w3-tag">Here</span></a>
+            <div class="toggle-link" onclick="toggleForms()">Don't have an account? | Sign up</div>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form" method="post" autocomplete="on" style="display: none;">
+            <div class="form-group">
+                <label for="signup-userFullName">FullName</label>
+                <input type="text" id="signup-userFullName" placeholder="Enter your Full name" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-useraddress">FullName</label>
+                <input type="text" id="signup-useraddress" placeholder="Enter your address" required>
+            </div>
+           
+            <div class="form-group">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" placeholder="Enter your password" required>
+            </div>
+            <button class="submit-btn" type="button" onclick="signup()">Sign Up</button>
+            <div class="toggle-link" onclick="toggleForms()">Already have an account? | Login</div>
+        </form>
+    </div>
+
+    <script type="module" src="./val.js">
+      
+    </script>
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
