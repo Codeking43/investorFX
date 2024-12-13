@@ -49,7 +49,7 @@ appId: "1:141801602453:web:91d3d6231987678dc78a9c"
               investedAmount: 0,
           });
 
-          displayMessage('Signup successful! Redirecting to dashboard...');
+          displayMessage('Signup successful! Redirecting to login...');
           setTimeout(() => window.location.href = "index.html", 1500);
       } catch (error) {
           displayMessage(`Error: ${error.message}`, true);
