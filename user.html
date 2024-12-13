@@ -12,7 +12,17 @@
     <script src="/js/script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
+      *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: rgb(235, 238, 241);
+    background-image: linear-gradient(to right,rgb(243, 245, 247),rgba(204, 175, 175, 0.685));
+}
         body, h1, h2, h3, h4, h5 {
             font-family: "Poppins", sans-serif;
         }
@@ -32,6 +42,15 @@
         li {
             gap: 4px;
         }
+        .icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+.icons i{
+    font-size: 30px;
+    flex-grow: 1;
+    flex-basis: 200;
+}
     </style>
 </head>
 <body>
@@ -81,7 +100,7 @@
 <div class="w3-main" style="margin-left:340px;margin-right:10px;">
    
     <div class="w3-container" style="margin-top:80px" id="showcase">
-        <p class="w3-text-green w3-center w3-xlarge" style="font-family: cursive;">1-Day payout scheme/<span id="showEL" class="w3-text-red">EveryDay is A Win!</span></p>
+        <p class="w3-text-green w3-center w3-xlarge" style="font-family: cursive;">3-Day payout scheme/<span id="showEL" class="w3-text-red">EveryDay is A Win!</span></p>
         <marquee behavior="" direction="" class="w3-text-light-green w3-xlarge ">Invest today and Earn tommorrow </marquee>
         <h3 class="w3-xlarge w3-center"><b class="w3-text-green" >Hi,<span class="w3-text-teal" id="username"></span></b></h3>
       
@@ -98,7 +117,19 @@
     <!-- Monetization Section -->
     <div class="w3-container" id="designers" style="margin-top:75px">
       <h4 class="w3-large w3-text-light-green"><b>  <span id="userEmail"></span></b></h4>
-    
+      <!--Icon Library-->
+      <div class="icons w3-center w3-padding">
+        <i class='bx bxl-squarespace w3-white w3-jumbo w3-card-4'></i>
+        <i class='bx bxl-patreon w3-white w3-jumbo w3-card-4'></i>
+        <i class='bx bxl-etsy w3-white w3-jumbo w3-card-4'></i>
+        <i class='bx bx-leaf  w3-white w3-jumbo w3-card-4'></i>
+        <i class='bx bxl-kubernetes w3-white w3-jumbo w3-card-4'></i>
+        <i class='bx bxl-spring-boot w3-white w3-jumbo w3-card-4'></i>
+        <i class='bx bxl-ok-ru w3-white w3-jumbo w3-card-4'></i>
+        <i class='bx bxl-markdown w3-white w3-jumbo w3-card-4' ></i>
+       </div>
+
+    <br>
       <hr style="width:50px;border:5px solid teal" class="w3-round">
       <p class="w3-text-blue"><b>plan and Earning budget:</b></p>
   </div>
@@ -153,7 +184,7 @@
   <div class="w3-container" id="packages" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Invest and Relax- <span>Original</span></b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>1-Day payout scheme</p>
+    <p>3-Day payout scheme</p>
   </div>     
     <div class="w3-container">
     <ul class="w3-ul w3-border w3-padding">
@@ -162,44 +193,42 @@
     </ul>
  
     <br>
-    <div id="id01" class="w3-modal" style="margin-top: 40px;">
-        <div class="w3-modal-content w3-animate-top w3-card-4">
-          <header class="w3-container w3-white" style="border-bottom: 3px solid black;"> 
+  <!-- The Invest Now button triggers the modal -->
+<button class="w3-left w3-btn w3-tag" onclick="document.getElementById('id01').style.display='block'" style="font-family: 'Times New Roman', Times, serif;">INVEST NOW</button>
 
-            <span onclick="document.getElementById('id01').style.display='none'" 
-            class="w3-button w3-tag w3-display-topright w3-text-blue">&times;</span>
-           
-          </header>
-        
-          <div class="w3-container">    
+<!-- Invest Modal -->
+<div id="id01" class="w3-modal" style="margin-top: 1px;">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+        <header class="w3-container w3-white" style="border-bottom: 3px solid black;">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-tag w3-display-topright w3-text-blue">&times;</span>
+        </header>
 
-      <div class="w3-half w3-container w3-teal">
-        <form id="orderForm">
-        <br> <br><br>
-        <label for="">Amount</label>
-        <input type="text" class="w3-input" name="" id="investedAmount" placeholder="Enter Amount" required>
-        <br><br>
-       
-        <select name="" id="plan" class="w3-input" required>
-            <option value="#Null">Selec Plan</option>
-            <option value="Starter">Starter</option>
-            <option value="Standard">Standard</option>
-            <option value="Premium">Premium</option>
-        </select>
-        <br><br> <label for="">Upload Receipt</label>
-        <input type="file" name="" id="imageUploader" accept="image/*" class="w3-input" required>
-        <br>
-        <div class="w3-card-4 w3-white">
-      <form method="post" class="w3-container">
-    <ul class="w3-ul">
-        <li>OPAY <span class="w3-tag w3-right">624353435</span></li>
-        <li>Mathias monfung</li>
-    </ul>
-   
-          <button class="w3-btn w3-padding w3-blue">Invest</button>
-          <br><br>
+        <div class="w3-container">
+            <div class="w3-half w3-container w3-teal">
+                <form id="orderForm">
+                    <label for="">Amount</label>
+                    <input type="text" class="w3-input" id="investedAmount" placeholder="Enter Amount" required>
+                    <br><br>
+                    <select id="plan" class="w3-input" required>
+                        <option value="#Null">Select Plan</option>
+                        <option value="Starter">Starter</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                    <br><br>
+                    <label for="">Upload Receipt</label>
+                    <input type="file" id="imageUploader" accept="image/*" class="w3-input" required>
+                    <br><br>
+                    <button class="w3-btn w3-padding w3-blue" onclick="submitOrder(event)">Invest</button>
+                </form>
+            </div>
+            <div class="w3-half w3-container">
+                <img id="uploadedImage" style="width: 100%;" alt="uploaded image">
+            </div>
+        </div>
     </div>
-    </form></div>
+</div>
+
     <div class="w3-half w3-container">
       <br>
        <img src="" alt=" " id="uploadedImage" style="width: 100%;" >
