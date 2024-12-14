@@ -1,0 +1,22 @@
+{
+    "name": "Invest-Fx",
+    "short_name": "Invest-Fx",
+    "description": "Learn about our policy for Forex, Futures, and Crypto trading. We aim to maximize profits while ensuring clients receive the agreed percentage, even in case of losses.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+
