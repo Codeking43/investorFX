@@ -10,9 +10,12 @@
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <script src="/js/script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ 
+
+
     <style>
       *{
     padding: 0;
@@ -45,8 +48,8 @@ html{
         .icons {
     display: flex;
     flex-wrap: wrap;
-}
-.icons i{
+   }
+.icons i,ul{
     font-size: 30px;
     flex-grow: 1;
     flex-basis: 200;
@@ -74,10 +77,9 @@ html{
     <!-- shareable Link -->
     <div class="w3-bar-block">
      
-<button class="w3-btn w3-black">Share Link</button>
 <div id="statusMessage"></div>
 <div id="countdown"></div>
-<ul id="orderList" class="w3-ul"></ul>
+
 
   </div>
     </div>
@@ -101,22 +103,23 @@ html{
    
     <div class="w3-container" style="margin-top:80px" id="showcase">
         <p class="w3-text-green w3-center w3-xlarge" style="font-family: cursive;">4-Day payout scheme/<span id="showEL" class="w3-text-red">EveryDay is A Win!</span></p>
-        <marquee behavior="" direction="" class="w3-text-light-green w3-xlarge ">Invest today and Earn tommorrow </marquee>
+        <marquee behavior="" direction="" class="w3-text-light-green w3-xlarge ">Invest today and Earn tomorrow </marquee>
         <h3 class="w3-xlarge w3-center"><b class="w3-text-green" >Hi,<span class="w3-text-teal" id="username"></span></b></h3>
       
     </div>
   <div class="w3-container">
     
-    <p class="w3-right w3-tag w3-yellow w3-xxlarge">&#8358;<span id="investAmount">0</span>  Invested</p>
-    
+    <p class="w3-right w3-tag  w3-xlarge">&#8358;<span id="investAmount">0</span>  Invested</p>
+    <h4 class="w3-large w3-text-light-green"><b>  <span id="userEmail"></span></b></h4>
   </div>
+  <!-- The Invest Now button triggers the modal -->
   <button class="w3-left w3-btn w3-tag"  onclick="document.getElementById('id01').style.display='block'"  style="font-family: 'Times New Roman', Times, serif;">INVEST NOW</button>
 
   <!-- invested modal-->
    
     <!-- Monetization Section -->
     <div class="w3-container" id="designers" style="margin-top:75px">
-      <h4 class="w3-large w3-text-light-green"><b>  <span id="userEmail"></span></b></h4>
+ 
       <!--Icon Library-->
       <div class="icons w3-center w3-padding">
         <i class='bx bxl-squarespace w3-white w3-jumbo w3-card-4'></i>
@@ -127,25 +130,44 @@ html{
         <i class='bx bxl-spring-boot w3-white w3-jumbo w3-card-4'></i>
         <i class='bx bxl-ok-ru w3-white w3-jumbo w3-card-4'></i>
         <i class='bx bxl-markdown w3-white w3-jumbo w3-card-4' ></i>
-       </div>
+       </div>         <!-- Packages / Pricing Tables -->
+           
+  <div class="w3-container" id="packages">
+    <h1 class="w3-xlarge w3-text-red"><b>Massive Cashback scheme <span class="w3-text-blue">60%</span></b></h1>
+    <hr class="w3-padding w3-teal">
+    <ul id="orderList" class="w3-ul"></ul>
+    <div class="w3-container w3-padding">
+      <span class="w3-xlarge w3-center " id="idFont">
+        <span class="w3-text-teal">InVestor</span>
+        <span class="w3-text-teal"></span>
+        <span class="w3-tag w3-red">FX</span>
+    </span> 
+    <span class="w3-text-teal w3-right w3-white w3-padding">Investment and Payout Plan</span>
+    </div>
+  </div>  
 
-    <br>
-      <hr style="width:50px;border:5px solid teal" class="w3-round">
-      <p class="w3-text-blue"><b>plan and Earning budget:</b></p>
-  </div>
   <hr>
-
+  <ul class="w3-ul w3-border w3-padding w3-border w3-teal">
+    <p><h2 class=" w3-large "> Our Policy<span class="w3-right w3-red w3-tiny w3-padding">T & C</span> </h2> </p>
+   <center><li class="w3-tag w3-center">Terms and Condidtion apply</li></center>
+    <p class="w3-card-2 w3-white w3-padding w3-wide">60% will be added to your invested fund after a successful trade and if at all any lost is incured 60% of the invested fund will be deducted and the remaining balance will be paid back</p>
+    <li >By clicking the invest button you have fully understand thoroughly the risk involved and have  agree to proced with it</li>
+</ul>
+<br>
   <div class="w3-row-padding w3-grayscale">
       <div class="w3-col m4 w3-margin-bottom">
-        <p class="w3-black w3-left w3-xlarge w3-tag">Starter</p>
-        <span class="w3-tag w3-right w3-red w3-wide w3-padding">&#8358;500 adder</span>
+        <p class="w3-black w3-left w3-xlarge w3-tag">Plans</p>
+        <span class="w3-tag w3-right w3-red w3-wide w3-padding">Massive Earning</span>
           <div class="w3-gray">
           
               <div class="w3-container">
         <ul class="w3-ul  w3-text-white w3-xlarge">
-            <li>&#8358;1500</li>
-            <li>&#8358;2500</li>
-            <li>&#8358;3500</li>
+            <li>Starter <span class="w3-right">&#8358;5000</span></li>
+            <li>Amature <span class="w3-right">&#8358;10,000</span></li>
+            <li>Standard <span class="w3-right">&#8358;15,000</span></li>
+            <li>Premium <span class="w3-right">&#8358;20,000</span></li>
+            <li>Premium plus <span class="w3-right">&#8358;25,000</span></li>
+            <li>Premium Extra <span class="w3-right">&#8358;25,000</span></li>
         </ul>
 
               </div>
@@ -153,58 +175,123 @@ html{
           </div>
       </div>
       <div class="w3-col m4 w3-margin-bottom">
-        <p class="w3-black w3-left w3-xlarge w3-tag">Standard</p>
-        <span class="w3-tag w3-right w3-red w3-wide w3-padding">&#8358;2000 adder</span>
+        <p class="w3-black w3-left w3-xlarge w3-tag">60% scheme</p>
+        <span class="w3-tag w3-right w3-red w3-wide w3-padding">Payout Very Fast</span>
           <div class="w3-teal">       
               <div class="w3-container">
                 <ul class="w3-ul w3-xlarge">
-                    <li>&#8358;5000</li>
-                    <li>&#8358;7000</li>
-                    <li>&#8358;8000</li>
+                    <li><h1>60% scheme </h1></li>
+                  <li>Either Win or Lost</li>
+                  <li>Payout is Ensure</li>
                 </ul>
               </div>
               <br>
           </div>
       </div>
+      
       <div class="w3-col m4 w3-margin-bottom">
-        <p class="w3-black w3-left w3-xlarge w3-tag">Premium</p>
-        <span class="w3-tag w3-right w3-red w3-wide w3-padding">&#8358;10,000 adder</span>
+        <p class="w3-black w3-left w3-xlarge w3-tag">Payout Method</p>
+        <span class="w3-tag w3-right w3-red w3-wide w3-padding">Direct Bank payment</span>
           <div class="w3-orange">
               <div class="w3-container">
                 <ul class="w3-ul  w3-text-white  w3-xlarge">
-                    <li>&#8358;20,000</li>
-                    <li>&#8358;20,000</li>
-                    <li>&#8358;80,0 00</li>
+                    <li>Local Bank payout Support</li>
+                    <li>Online Banking payout</li>
+                   
                 </ul>
               </div>
               <br>
           </div>
       </div>
-       <!-- Packages / Pricing Tables -->
-  <div class="w3-container" id="packages" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Invest and Relax- <span>Original</span></b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>4-Day payout scheme</p>
-  </div>     
-    <div class="w3-container">
-    <ul class="w3-ul w3-border w3-padding">
-        <p><h2 class=" w3-large "> Terms  and Condition <span class="w3-right w3-red w3-tiny w3-padding">Our Policy</span> </h2>   </p>
-        <li>Only members who has invested will be liable to get paid after 24hours of verification of invested fund</li>
-    </ul>
- 
-    <br>
-  <!-- The Invest Now button triggers the modal -->
-<button class="w3-left w3-btn w3-tag" onclick="document.getElementById('id01').style.display='block'" style="font-family: 'Times New Roman', Times, serif;">INVEST NOW</button>
+    </div>
+  
+    
+        <footer class="w3-footer w3-row-padding w3-black">
+          <br>
+          <div class="w3-container w3-half">
+            <h5 class="w3-text-light-green">Follows Us Social Media</h5>
+            <ul class="w3-ul w3-text-white w3-xlarge">
+              <li>
+                <a href="https://www.instagram.com" target="_blank" class="w3-text-white">
+                  <i class="fa fa-instagram w3-right"></i> Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com" target="_blank" class="w3-text-white">
+                  <i class="fa fa-facebook w3-right"></i> Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com" target="_blank" class="w3-text-white">
+                  <i class="fa fa-youtube w3-right"></i> YouTube
+                </a>
+              </li>
+              <li>
+                <a href="https://www.twitter.com" target="_blank" class="w3-text-white">
+                  <i class="fa fa-x-twitter w3-right"></i> Twitter X
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com" target="_blank" class="w3-text-white">
+                  <i class="fa fa-tiktok w3-right"></i> TikTok
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.org" target="_blank" class="w3-text-white">
+                  <i class="fa fa-telegram w3-right"></i> Telegram
+                </a>
+              </li>
+            </ul>
+            
+          </div>
+          <div class="w3-half w3-container">
+            <span class="w3-xlarge w3-center " id="idFont">
+              <span class="w3-text-teal">InVestor</span>
+              <span class="w3-text-teal"></span>
+              <span class="w3-tag w3-red">FX</span>
+          </span>
+          <hr>
+          <h4 class="w3-text-blue w3-wide">AboutUs</h4>
+          <div class="w3-container w3-white w3-padding">
+            <p>This platform uses funded money invested to trade on Forex,Fixture and Crypto trading with the sole aim of making profit ,which will inturn be use to settle its client base on the agreed percentage either win or loss. </p>
+            <br>
+            <cite class="w3-right w3-text-green">
+              <mark class="w3-padding w3-center">CEO</mark>
+              <u>Nkombe Mathias Monfung</u>
+            </cite>
+            <br>
+          </div>
+
+          </div>
+          <br> <br>
+         
+<h1 class="w3-center w3-wide ">2024&copy;reserved </h1>
+        </footer>
+
+
+
+
 
 <!-- Invest Modal -->
-<div id="id01" class="w3-modal" style="margin-top:19px;">
+<div id="id01" class="w3-modal" style="margin-top: 10px;">
     <div class="w3-modal-content w3-animate-top w3-card-4">
         <header class="w3-container w3-white" style="border-bottom: 3px solid black;">
             <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-tag w3-display-topright w3-text-blue">&times;</span>
         </header>
 
         <div class="w3-container">
-            <div class="w3-half w3-container w3-teal">
+            <div class="w3-half w3-container w3-black">
+              <br>
+              <div class="icons">
+                <ul class="w3-ul  w3-text-white w3-xlarge">
+                  <li>Starter <span class="w3-right">&#8358;5000</span></li>
+                  <li>Amature <span class="w3-right">&#8358;10,000</span></li>
+                  <li>Standard <span class="w3-right">&#8358;15,000</span></li>
+                  <li>Premium <span class="w3-right">&#8358;20,000</span></li>
+                  <li>Premium plus <span class="w3-right">&#8358;25,000</span></li>
+                  <li>Premium Extra <span class="w3-right">&#8358;25,000</span></li>
+              </ul>
+              </div>
                 <form id="orderForm">
                     <label for="">Amount</label>
                     <input type="text" class="w3-input" id="investedAmount" placeholder="Enter Amount" required>
@@ -229,11 +316,7 @@ html{
     </div>
 </div>
 
-    <div class="w3-half w3-container">
-      <br>
-       <img src="" alt=" " id="uploadedImage" style="width: 100%;" >
-       </div>
-          </div>
+ 
           
         </form>
         <br>
@@ -257,39 +340,39 @@ html{
         </div>
       </div>
     </div>
-    
-          
+  
 
 
+
     
-        <script>
-          // Script to open and close sidebar
-          function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-            document.getElementById("myOverlay").style.display = "block";
-          }
-           
-          function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-            document.getElementById("myOverlay").style.display = "none";
-          }
-          
-          // Modal Image Gallery
-          function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
-          }
-          </script>
-                    </div>
-                    <script type="module" src="./cont.js"> </script>
-                      
-                      <script>
-                        function logUserOut(){
-                          sessionStorage.removeItem('sessionToken');
-                          window.location.href = "index.html";
-                        }
-                      </script>
-                    
-  </div></div></body></html>
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+       
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+      
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
+      </script>
+                </div>
+                <script type="module" src="./cont.js"> </script>
+                  
+                  <script>
+                    function logUserOut(){
+                      sessionStorage.removeItem('sessionToken');
+                      window.location.href = "index.html";
+                    }
+                  </script>
+                
+</div></div></body></html>
