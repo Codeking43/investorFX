@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://investor-fx.vercel.app/sitemap.xml
