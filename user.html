@@ -1,435 +1,82 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Learn about our policy for Forex, Futures, and Crypto trading. We aim to maximize profits while ensuring clients receive the agreed percentage, even in case of losses.">
-<meta name="keywords" content="Forex trading, Futures trading, Crypto trading, investment policy, profit sharing, terms and conditions, trading platform">
-<meta name="author" content="NKOMBE MATHIAS MONFUNG">
-    <!-- Favicon and App Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="L2gOJ-XFIl4E3jX53z3YLSHcyoJnVdyXFYqO1KfvSGE" />
-    <title>HOME</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="./4/w3.css">
-    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <script src="/js/script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
- 
-
-
-    <style>
-      *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-html{
-    background-color: rgb(235, 238, 241);
-    background-image: linear-gradient(to right,rgb(243, 245, 247),rgba(204, 175, 175, 0.685));
-}
-        body, h1, h2, h3, h4, h5 {
-            font-family: "Poppins", sans-serif;
-        }
-        body {
-            font-size: 16px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .w3-half img {
-            margin-bottom: -6px;
-            margin-top: 16px;
-            opacity: 0.8;
-            cursor: pointer;
-        }   
-        .w3-half img:hover { 
-            opacity: 1;
-        }
-        li {
-            gap: 4px;
-        }
-        .icons {
-    display: flex;
-    flex-wrap: wrap;
-   }
-.icons i,ul{
-    font-size: 30px;
-    flex-grow: 1;
-    flex-basis: 200;
-}
-    </style>
+<title>Username</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<script type="module" src="home.js"></script>
 </head>
 <body>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-gray w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topright" style="width:100%;color:white; font-size:22px">close &times;</a>
-    <div class="w3-container">
-        <div class="w3-card-4">
-            <img src="./avatar1.png" alt="Avatar" width="100%">
-            <div class="w3-container w3-center w3-white">
-                <span id="fullname"></span>
-                <br>
-                <button class="w3-btn w3-black" onclick="logUserOut()">Logout</button>
-                <br>
-                <br>
-            </div>
-        </div>
-    </div>
-    <br>
-       <span class="w3-black w3-padding"> Payout Countdown</span>
-        <hr>
-       <div id="statusMessage"></div>
-<div id="countdown"></div>
+<script>
+// ✅ Check if user is logged in, otherwise redirect to index.html
+if (!sessionStorage.getItem("uid")) {
+    window.location.href = "index.html"; // Redirect to login page if not logged in
+}
+</script>
 
-    <br>
-    <!-- shareable Link -->
-    <div class="w3-bar-block">
-      <div class="w3-container w3-padding">
-      <span class="w3-xlarge w3-center " id="idFont">
-        <span class="w3-text-teal">InVestor</span>
-        <span class="w3-text-teal"></span>
-        <span class="w3-tag w3-red">FX</span>
-    </span> 
-    <span class="w3-text-teal w3-right w3-white w3-padding">Easy Investment and Payout Plan</span>
-    </div>
-<ul class="w3-ul w3-text-white w3-large">
-  <li>
-    <a href="https://www.instagram.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-instagram w3-right"></i> Instagram
-    </a>
-  </li>
-  <li>
-    <a href="https://www.facebook.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-facebook w3-right"></i> Facebook
-    </a>
-  </li>
-  <li>
-    <a href="https://www.youtube.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-youtube w3-right"></i> YouTube
-    </a>
-  </li>
-  <li>
-    <a href="https://www.twitter.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-twitter w3-right"></i> Twitter X
-    </a>
-  </li>
-  <li>
-    <a href="https://www.tiktok.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-tiktok w3-right"></i> TikTok
-    </a>
-  </li>
-  <li>
-    <a href="https://telegram.org" target="_blank" class="w3-text-white">
-      <i class="bx bxl-telegram w3-right"></i> Telegram
-    </a>
-  </li>
-</ul>
-
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <div class="w3-padding w3-margin">
+    <h3>User Details</h3>
+    <p><strong>Username:</strong> <span id="username"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Phone:</strong> <span id="phone"></span></p>
+    <button id="logoutBtn" class="w3-button w3-red">Logout</button>
   </div>
-    </div>
-</nav>
-
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding" style="border-bottom: 2px solid gray;">
-    <a href="javascript:void(0)" class="w3-button w3-text-red w3-margin-right" onclick="w3_open()">&#9776;</a>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-
-
-
-
-
-<!-- PAGE CONTENT -->
-<div class="w3-main" style="margin-left:340px;margin-right:10px;">
-   
-    <div class="w3-container" style="margin-top:80px" id="showcase">
-        <p class="w3-text-green w3-center w3-xlarge" style="font-family: cursive;">4-Day payout scheme/<span id="showEL" class="w3-text-red">EveryDay is A Win!</span></p>
-        <marquee behavior="" direction="" class="w3-text-light-green w3-xlarge ">Invest today and Earn tomorrow </marquee>
-        <h3 class="w3-xlarge w3-center"><b class="w3-text-green" >Hi,<span class="w3-text-teal" id="username"></span></b></h3>
-      
-    </div>
-  <div class="w3-container">
-    
-    <p class="w3-right w3-tag  w3-xlarge">&#8358;<span id="investAmount">0</span>  Invested</p>
-    <h4 class="w3-large w3-text-light-green"><b>  <span id="userEmail"></span></b></h4>
-  </div>
-  <!-- The Invest Now button triggers the modal -->
-  <button class="w3-left w3-btn w3-tag"  onclick="document.getElementById('id01').style.display='block'"  style="font-family: 'Times New Roman', Times, serif;">INVEST NOW</button>
-
-  <!-- invested modal-->
-   
-    <!-- Monetization Section -->
-    <div class="w3-container" id="designers" style="margin-top:75px">
- 
-      <!--Icon Library-->
-      <div class="icons w3-center w3-padding">
-        <i class='bx bxl-squarespace w3-white w3-jumbo w3-card-4'></i>
-        <i class='bx bxl-patreon w3-white w3-jumbo w3-card-4'></i>
-        <i class='bx bxl-etsy w3-white w3-jumbo w3-card-4'></i>
-        <i class='bx bx-leaf  w3-white w3-jumbo w3-card-4'></i>
-        <i class='bx bxl-kubernetes w3-white w3-jumbo w3-card-4'></i>
-        <i class='bx bxl-spring-boot w3-white w3-jumbo w3-card-4'></i>
-        <i class='bx bxl-ok-ru w3-white w3-jumbo w3-card-4'></i>
-        <i class='bx bxl-markdown w3-white w3-jumbo w3-card-4' ></i>
-       </div>         <!-- Packages / Pricing Tables -->
-           
-  <div class="w3-display-container w3-black w3-padding" id="packages">
-      <br>
-       <p class="w3-white w3-padding"> Invested Transaction </p>
-    <ul id="orderList" class="w3-ul icons w3-padding"></ul>
-      <br>
-  </div>  
-    <h1 class="w3-xlarge w3-text-red"><b>Massive Cashback scheme <span class="w3-text-blue">60%</span></b></h1>
-     
-     
-    <hr class="w3-padding w3-teal">
-  <hr>
-<ul class="w3-ul w3-border w3-padding w3-border w3-teal">
-  <h2 class="w3-large">Our Policy <span class="w3-right w3-red w3-tiny w3-padding">T & C</span></h2>
-  <li class="w3-tag w3-center">Terms and Conditions apply</li>
-  <p class="w3-card-2 w3-white w3-padding w3-wide">60% will be added to your invested fund after a successful trade. If any loss is incurred, 60% of the invested fund will be deducted, and the remaining balance will be paid back.</p>
-  <li>By clicking the invest button, you fully understand the risks involved and agree to proceed with them.</li>
-</ul>
-
-<br>
-  <div class="w3-row-padding w3-grayscale">
-      <div class="w3-col m4 w3-margin-bottom">
-        <p class="w3-black w3-left w3-xlarge w3-tag">Plans</p>
-        <span class="w3-tag w3-right w3-red w3-wide w3-padding">Massive Earning</span>
-          <div class="w3-gray">
-          
-              <div class="w3-container">
-        <ul class="w3-ul  w3-text-white w3-xlarge">
-            <li>Starter <span class="w3-right">&#8358;5000</span></li>
-            <li>Amature <span class="w3-right">&#8358;10,000</span></li>
-            <li>Standard <span class="w3-right">&#8358;15,000</span></li>
-            <li>Premium <span class="w3-right">&#8358;20,000</span></li>
-            <li>Premium plus <span class="w3-right">&#8358;25,000</span></li>
-            <li>Premium Extra <span class="w3-right">&#8358;25,000</span></li>
-        </ul>
-
-              </div>
-              <br>
-          </div>
-      </div>
-      <div class="w3-col m4 w3-margin-bottom">
-        <p class="w3-black w3-left w3-xlarge w3-tag">60% scheme</p>
-        <span class="w3-tag w3-right w3-red w3-wide w3-padding">Payout Very Fast</span>
-          <div class="w3-teal">       
-              <div class="w3-container">
-                <ul class="w3-ul w3-xlarge">
-                    <li><h1>60% scheme </h1></li>
-                  <li>Either Win or Lost</li>
-                  <li>Payout is Ensure</li>
-                </ul>
-              </div>
-              <br>
-          </div>
-      </div>
-      
-      <div class="w3-col m4 w3-margin-bottom">
-        <p class="w3-black w3-left w3-xlarge w3-tag">Payout Method</p>
-        <span class="w3-tag w3-right w3-red w3-wide w3-padding">Direct Bank payment</span>
-          <div class="w3-orange">
-              <div class="w3-container">
-                <ul class="w3-ul  w3-text-white  w3-xlarge">
-                    <li>Local Bank payout Support</li>
-                    <li>Online Banking payout</li>
-                   
-                </ul>
-              </div>
-              <br>
-          </div>
-      </div>
-    </div>
-  
-    
-        <footer class="w3-footer w3-row-padding w3-black">
-          <br>
-          <div class="w3-container w3-half">
-            <h5 class="w3-text-light-green">Follows Us Social Media</h5>
-            <ul class="w3-ul w3-text-white w3-xlarge">
-  <li>
-    <a href="https://www.instagram.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-instagram w3-right"></i> Instagram
-    </a>
-  </li>
-  <li>
-    <a href="https://www.facebook.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-facebook w3-right"></i> Facebook
-    </a>
-  </li>
-  <li>
-    <a href="https://www.youtube.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-youtube w3-right"></i> YouTube
-    </a>
-  </li>
-  <li>
-    <a href="https://www.twitter.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-twitter w3-right"></i> Twitter X
-    </a>
-  </li>
-  <li>
-    <a href="https://www.tiktok.com" target="_blank" class="w3-text-white">
-      <i class="bx bxl-tiktok w3-right"></i> TikTok
-    </a>
-  </li>
-  <li>
-    <a href="https://telegram.org" target="_blank" class="w3-text-white">
-      <i class="bx bxl-telegram w3-right"></i> Telegram
-    </a>
-  </li>
-</ul>
-
-          </div>
-          <div class="w3-half w3-container">
-            <span class="w3-xlarge w3-center " id="idFont">
-              <span class="w3-text-teal">InVestor</span>
-              <span class="w3-text-teal"></span>
-              <span class="w3-tag w3-red">FX</span>
-          </span>
-          <hr>
-          <h4 class="w3-text-blue w3-wide">AboutUs</h4>
-          <div class="w3-container w3-white w3-padding">
-            <p class="w3-card-2 w3-white w3-padding w3-wide">This platform uses funded money invested to trade in Forex, Futures, and Crypto markets with the sole aim of making a profit, which will in turn be used to settle its client base on the agreed percentage, whether in case of a win or a loss.</p>
-    <br>
-            <cite class="w3-right w3-text-green">
-              <mark class="w3-padding w3-center">CEO</mark>
-              <u>Nkombe Mathias Monfung</u>
-            </cite>
-            <br>
-          </div>
-
-          </div>
-          <br> <br>
-         
-<h1 class="w3-center w3-wide ">2024&copy;reserved </h1>
-        </footer>
-
-
-
-
-
-<!-- Invest Modal -->
-<div id="id01" class="w3-modal" style="margin-top: 10px;">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-        <header class="w3-container w3-white" style="border-bottom: 3px solid black;">
-            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-tag w3-display-topright w3-text-blue">&times;</span>
-        </header>
-
-                <h4 class="w3-border w3-padding">Payment Account</h4>
-<p class="w3-light-green w3-padding"> Opay <span class="w3-right w3-text-white">6111945572</span><span class="w3-right w3-tag">Mathias Monfung Nkombe</span></p>
-
-
-        <div class="w3-container">
-            <div class="w3-half w3-container w3-black">
-              <br>
-              <div class="icons">
-                <ul class="w3-ul  w3-text-white w3-xlarge">
-                  <li>Starter <span class="w3-right">&#8358;5000</span></li>
-                  <li>Amature <span class="w3-right">&#8358;10,000</span></li>
-                  <li>Standard <span class="w3-right">&#8358;15,000</span></li>
-                  <li>Premium <span class="w3-right">&#8358;20,000</span></li>
-                  <li>Premium plus <span class="w3-right">&#8358;25,000</span></li>
-                  <li>Premium Extra <span class="w3-right">&#8358;25,000</span></li>
-              </ul>
-              </div>
-                <form id="orderForm">
-                    <label for="">Amount</label>
-                    <input type="text" class="w3-input" id="investedAmount" placeholder="Enter Amount" required>
-                    <br><br>
-                    <select id="plan" class="w3-input" required>
-                        <option value="#Null">Select Plan</option>
-                        <option value="Starter">Starter</option>
-                        <option value="Standard">Standard</option>
-                        <option value="Premium">Premium</option>
-                    </select>
-                    <br><br>
-                    <label for="">Upload Receipt</label>
-                    <input type="file" id="imageUploader" accept="image/*" class="w3-input" required>
-                    <br><br>
-                    <button class="w3-btn w3-padding w3-blue" onclick="submitOrder(event)">Invest</button>
-                </form>
-            </div>
-            <div class="w3-half w3-container">
-                <img id="uploadedImage" style="width: 100%;" alt="uploaded image">
-            </div>
-        </div>
-    </div>
 </div>
 
- 
-          
-        </form>
-        <br>
-        <script>
-            const imgUploader = document.getElementById('imageUploader');
-            let uploadedImg = document.getElementById('uploadedImage');
-            imgUploader.addEventListener("change", (e) => {
-                const selectedImg = imgUploader.files[0];
-                const reader = new FileReader();
-                reader.addEventListener('load', (e) => {
-                    uploadedImg.src = e.target.result;
-                });
-                reader.readAsDataURL(selectedImg);
-             
-            });
-         
-        </script>
-          </div>
-          </div>
-          <br>
-        </div>
-      </div>
+<!-- Page Content -->
+<div class="w3-white w3-padding">
+  <button class="w3-button w3-card-4 w3-xlarge" onclick="w3_open()">☰</button>
+  <img src="./android-chrome-192x192.png" class="w3-right" width="60px" height="60px" alt="">
+</div>
+
+<div class="w3-container w3-row-padding">
+  <div class="w3-third w3-card-4">
+    <div class="w3-card w3-white">
+      <img src="images (1).jpeg" alt="">
+      <h3>Practice, Learn, and Pass at Ease</h3>
+      <a href="#" class="w3-btn w3-red">Find Out</a>
     </div>
-  
+  </div>
+  <div class="w3-third w3-card">
+    <div class="w3-card w3-white">
+      <img src="download (1).png" alt="">
+      <h3>Keep your course intact</h3>
+      <a href="#" class="w3-btn w3-red">Find Out</a>
+    </div>
+  </div>
+  <div class="w3-third">
+    <div class="w3-card w3-white">
+      <img src="download.png" alt="">
+      <h3>Join our Online Class</h3>
+      <a href="#" class="w3-btn w3-red">Find Out</a>
+    </div>
+  </div>
+</div>
 
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
 
-    
-    <script>
-      // Script to open and close sidebar
-      function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-      }
-       
-      function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-      }
-      
-      // Modal Image Gallery
-      function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-      }
-      </script>
-                </div>
-                <script type="module" src="./cont.js"> </script>
-                  
-                  <script>
-                    function logUserOut(){
-                      sessionStorage.removeItem('sessionToken');
-                      window.location.href = "index.html";
-                    }
-                  </script>
-                 
-    <script src="script.js"></script>
-</div></div></body></html>
+// ✅ Logout function: Clears session and redirects to index.html
+document.getElementById("logoutBtn").addEventListener("click", function() {
+    sessionStorage.clear();  // Clears user session
+    window.location.href = "index.html";  // Redirect to login page
+});
+
+// ✅ Populate user details from session storage
+document.getElementById("username").textContent = sessionStorage.getItem("username") || "Unknown";
+document.getElementById("email").textContent = sessionStorage.getItem("email") || "No Email";
+document.getElementById("phone").textContent = sessionStorage.getItem("phone") || "Not Provided";
+</script>
+
+</body>
+</html>
